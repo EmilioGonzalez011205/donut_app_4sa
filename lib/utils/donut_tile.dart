@@ -28,6 +28,8 @@ class DonutTile extends StatelessWidget {
           child: Column(
             children: [
               Row(
+                //Alinea los precios a la derecha
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -45,9 +47,41 @@ class DonutTile extends StatelessWidget {
                         color: donutColor[800],
                     ) 
                   ),
-                )
+                ),
               ],
-            )
+            ),
+            //Donut price
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 0),
+                  child: Image.asset(imageName),
+                ),
+                //Donut flavor text
+                SizedBox(height: 10,),
+                Text(donutFlavor,
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold),),
+                SizedBox(height: 10,),
+                Text("Dunkin´s",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold
+                )),
+                //Icons 
+                SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(Icons.favorite_border_outlined,
+                    size: 28,),
+                    Text("Add", style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline
+                    ),)
+                  ],
+                )
       ]
     ),
   )
