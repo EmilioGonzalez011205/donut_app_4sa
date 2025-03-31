@@ -4,12 +4,14 @@ class DonutTile extends StatelessWidget {
 
   final String donutFlavor;
   final String donutPrice;
+  final String donutStore;
   //dynamic porque será de tipo color
   final dynamic donutColor;
   final String imageName;
-
-  const DonutTile({super.key, 
-  required this.donutFlavor, 
+  
+    const DonutTile({super.key, 
+  required this.donutFlavor,
+  required this.donutStore, 
   required this.donutPrice, 
   required this.donutColor, 
   required this.imageName}
@@ -59,10 +61,12 @@ class DonutTile extends StatelessWidget {
                 SizedBox(height: 10,),
                 Text(donutFlavor,
                   style: TextStyle(
+                    color:donutColor,
                     fontSize: 28,
                     fontWeight: FontWeight.bold),),
+                //Espacio entre cada texto o elemento
                 SizedBox(height: 10,),
-                Text("Dunkin´s",
+                Text(donutStore,
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 18,
@@ -70,17 +74,21 @@ class DonutTile extends StatelessWidget {
                 )),
                 //Icons 
                 SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(Icons.favorite_border_outlined,
-                    size: 28,),
-                    Text("Add", style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline
-                    ),)
-                  ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(Icons.favorite_border_outlined,
+                      size: 28,
+                      color: Colors.red,),
+                      Text("Add", style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline
+                      ),)
+                    ],
+                  ),
                 )
       ]
     ),
